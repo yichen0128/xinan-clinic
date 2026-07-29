@@ -1,1 +1,288 @@
 # xinan-clinic
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>信安診所 - 嘉義肝膽腸胃、心臟血管專科</title>
+    <style>
+        /* 基礎樣式與字型設定 */
+        :root {
+            --primary-color: #2c7a7b; /* 醫療綠藍色調 */
+            --secondary-color: #4a5568;
+            --bg-color: #f7fafc;
+            --text-color: #2d3748;
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Microsoft JhengHei", sans-serif;
+            line-height: 1.6;
+            color: var(--text-color);
+            background-color: var(--bg-color);
+            margin: 0;
+            padding: 0;
+        }
+
+        /* 頁首標題區 */
+        header {
+            background-color: var(--primary-color);
+            color: white;
+            text-align: center;
+            padding: 2.5rem 1rem;
+        }
+        header h1 {
+            margin: 0;
+            font-size: 2.2rem;
+            letter-spacing: 2px;
+        }
+        header p {
+            margin: 0.5rem 0 0 0;
+            opacity: 0.9;
+        }
+
+        /* 區塊通用樣式 */
+        .container {
+            max-width: 960px;
+            margin: 2rem auto;
+            padding: 0 1.5rem;
+        }
+        
+        section {
+            background: white;
+            padding: 2rem;
+            margin-bottom: 2rem;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+        }
+
+        h2 {
+            color: var(--primary-color);
+            border-bottom: 2px solid var(--primary-color);
+            padding-bottom: 0.5rem;
+            margin-top: 0;
+        }
+
+        /* 醫療團隊樣式 */
+        .doctor-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2rem;
+        }
+        @media (max-width: 768px) {
+            .doctor-grid { grid-template-columns: 1fr; }
+        }
+        .doctor-card {
+            background: #fafbfd;
+            padding: 1.5rem;
+            border-left: 4px solid var(--primary-color);
+            border-radius: 0 8px 8px 0;
+        }
+        .doctor-name {
+            font-size: 1.3rem;
+            font-weight: bold;
+            margin-bottom: 0.5rem;
+            color: #1a202c;
+        }
+        .doctor-title {
+            color: var(--primary-color);
+            font-weight: 600;
+            margin-bottom: 1rem;
+        }
+        .doctor-specialty {
+            margin: 0;
+            padding-left: 1.2rem;
+        }
+
+        /* 門診時間表樣式（支援手機滑動） */
+        .table-responsive {
+            overflow-x: auto;
+            margin-top: 1rem;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            min-width: 600px;
+            text-align: center;
+        }
+        th, td {
+            border: 1px solid #e2e8f0;
+            padding: 0.75rem;
+        }
+        th {
+            background-color: #edf2f7;
+            color: #4a5568;
+        }
+        tr:nth-child(even) {
+            background-color: #f7fafc;
+        }
+        .status-open {
+            color: var(--primary-color);
+            font-weight: bold;
+        }
+        .status-close {
+            color: #a0aec0;
+        }
+
+        /* 聯絡資訊樣式 */
+        .info-list {
+            list-style: none;
+            padding: 0;
+        }
+        .info-list li {
+            margin-bottom: 0.8rem;
+            font-size: 1.05rem;
+        }
+        .info-label {
+            font-weight: bold;
+            color: var(--primary-color);
+            display: inline-block;
+            width: 90px;
+        }
+        .btn-call {
+            display: inline-block;
+            background-color: var(--primary-color);
+            color: white;
+            text-decoration: none;
+            padding: 0.5rem 1rem;
+            border-radius: 4px;
+            margin-top: 0.5rem;
+            font-weight: bold;
+        }
+        .btn-call:hover {
+            opacity: 0.9;
+        }
+
+        /* 頁尾 */
+        footer {
+            text-align: center;
+            padding: 1.5rem;
+            color: #a0aec0;
+            font-size: 0.9rem;
+            background-color: #1a202c;
+            margin-top: 4rem;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- 頁首區塊 -->
+    <header>
+        <h1>信安診所</h1>
+        <p>信心、安全、專業｜肝膽腸胃、心臟血管專科醫療團隊</p>
+    </header>
+
+    <div class="container">
+        
+        <!-- 關於診所 -->
+        <section id="about">
+            <h2>關於信安診所</h2>
+            <p>信安診所座落於嘉義市中心，由前醫學中心主治醫師團隊親自坐鎮。我們秉持「信心、安全、專業」的理念，結合肝膽腸胃與心臟血管兩大專科，引進先進的醫療設備，為在地鄉親提供最精準的診斷與最溫馨的家庭醫學照護。不論是一般感冒，或是高血壓、無痛腸胃鏡檢查，信安診所都是您健康最堅實的後盾。</p>
+        </section>
+
+        <!-- 醫療團隊 -->
+        <section id="team">
+            <h2>醫療團隊介紹</h2>
+            <div class="doctor-grid">
+                <!-- 醫師 1 -->
+                <div class="doctor-card">
+                    <div class="doctor-name">陳奕成 院長</div>
+                    <div class="doctor-title">肝膽腸胃專科醫師</div>
+                    <p><strong>主治專長：</strong></p>
+                    <ul class="doctor-specialty">
+                        <li>胃食道逆流、胃十二指腸潰瘍</li>
+                        <li>大腸息肉切除</li>
+                        <li>脂肪肝、慢性肝炎追蹤</li>
+                        <li>無痛胃鏡與大腸鏡檢查</li>
+                        <li>體重管理</li>
+                    </ul>
+                </div>
+                <!-- 醫師 2 -->
+                <div class="doctor-card">
+                    <div class="doctor-name">陳浩光 醫師</div>
+                    <div class="doctor-title">心臟血管專科醫師</div>
+                    <p><strong>主治專長：</strong></p>
+                    <ul class="doctor-specialty">
+                        <li>三高慢性病（糖尿病、高血壓、高血脂）</li>
+                        <li>心血管疾病（心絞痛、心律不整）</li>
+                        <li>骨關節炎</li>
+                        <li>一般感冒與常見內科疾病</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- 門診時間表 -->
+        <section id="timetable">
+            <h2>門診時間表</h2>
+            <div class="table-responsive">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>時段</th>
+                            <th>星期一</th>
+                            <th>星期二</th>
+                            <th>星期三</th>
+                            <th>星期四</th>
+                            <th>星期五</th>
+                            <th>星期六</th>
+                            <th>星期日</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>早班</strong><br>08:30–12:00</td>
+                            <td class="status-open">●</td>
+                            <td class="status-open">●</td>
+                            <td class="status-open">●</td>
+                            <td class="status-open">●</td>
+                            <td class="status-open">●</td>
+                            <td class="status-open">●</td>
+                            <td class="status-close">休診</td>
+                        </tr>
+                        <tr>
+                            <td><strong>午班</strong><br>16:00–18:00</td>
+                            <td class="status-open">●</td>
+                            <td class="status-open">●</td>
+                            <td class="status-close">—</td>
+                            <td class="status-open">●</td>
+                            <td class="status-open">●</td>
+                            <td class="status-open">●</td>
+                            <td class="status-close">休診</td>
+                        </tr>
+                        <tr>
+                            <td><strong>晚班</strong><br>19:00–21:00</td>
+                            <td class="status-open">●</td>
+                            <td class="status-open">●</td>
+                            <td class="status-open">●</td>
+                            <td class="status-open">●</td>
+                            <td class="status-open">●</td>
+                            <td class="status-close">—</td>
+                            <td class="status-close">休診</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+        <!-- 聯絡與交通資訊 -->
+        <section id="contact">
+            <h2>聯絡與交通資訊</h2>
+            <ul class="info-list">
+                <li><span class="info-label">診所地址：</span>嘉義市民權路278號</li>
+                <li>
+                    <span class="info-label">聯絡電話：</span>05-27857681 
+                    <br><a href="tel:05-27857681" class="btn-call">📞 點擊撥打電話</a>
+                </li>
+                <li><span class="info-label">交通指引：</span>鄰近嘉義中央廣場與地方法院舊址，周邊設有路邊停車格與收費停車場，方便您就醫停車。</li>
+            </ul>
+        </section>
+
+    </div>
+
+    <!-- 頁尾 -->
+    <footer>
+        <p>&copy; 2026 信安診所 版權所有｜信心・安全・專業</p>
+    </footer>
+
+</body>
+</html>
